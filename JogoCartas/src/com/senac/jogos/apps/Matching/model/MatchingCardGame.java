@@ -3,19 +3,23 @@ package com.senac.jogos.apps.Matching.model;
 import com.senac.jogos.Jogador;
 import com.senac.jogos.cartas.Baralho;
 import com.senac.jogos.cartas.Carta;
+import com.senac.jogos.apps.Matching.controller.*;
 
 public class MatchingCardGame {
 
 	private Baralho baralho;
-	private Jogador jogador;
-	
+	private Jogador[] jogadores;
+	private  JogoController contr;
+	int posicao=0;
 	private Carta mesa;
 	
 	public MatchingCardGame()
-	{
+	{   
 		baralho = new Baralho();
-		jogador = new Jogador();
+		for(int i=0;i<contr.getNunJogador();i++){
+		jogadores[i] = new Jogador();
 		mesa = baralho.drawCarta();
+		}
 	}
 	
 	public int matchCarta(Carta carta)
@@ -47,8 +51,11 @@ public class MatchingCardGame {
 	}
 	
 	public Jogador getJogador()
-	{
-		return jogador;
+	{  posicao++;
+		if(posicao>contr.getNunJogador())
+		   posicao=1;
+		return jogadores[posicao];
+	      
 	}
 }
 

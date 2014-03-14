@@ -11,9 +11,16 @@ public class JogoView {
 	private static JogoController controller = new JogoController();
 	
 	public static void main(String[] args)
+	
 	{
+		
+		
+	
+       controller.definirqJogador();
+		
 		out.println(
 				"Carta na mesa: " + controller.showMesa()
+				
 		);
 
 		out.print("Digite 'jogar' para jogar, 'pular' para passar a vez: ");
