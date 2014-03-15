@@ -8,11 +8,13 @@ public class Telefone {
  
  
 public Telefone(int ddd, double numero, int tipoTelefone) {
-	super();
+
 	this.ddd = ddd;
 	this.numero = numero;
 	this.tipoTelefone = tipoTelefone;
 }
+
+
 public int getDdd() {
 	return ddd;
 }
@@ -31,8 +33,6 @@ public int getTipoTelefone() {
 public void setTipoTelefone(int tipoTelefone) {
 	this.tipoTelefone = tipoTelefone;
 }
- 
- 
  
  
 
