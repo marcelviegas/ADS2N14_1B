@@ -3,11 +3,11 @@ package com.senac.agenda;
 public class Telefone {
 	
  private int ddd;
- private double numero;
+ private String numero;
  private int tipoTelefone;
  
  
-public Telefone(int ddd, double numero, int tipoTelefone) {
+public Telefone(int ddd, String numero, int tipoTelefone) {
 
 	this.ddd = ddd;
 	this.numero = numero;
@@ -21,10 +21,10 @@ public int getDdd() {
 public void setDdd(int ddd) {
 	this.ddd = ddd;
 }
-public double getNumero() {
+public String getNumero() {
 	return numero;
 }
-public void setNumero(double numero) {
+public void setNumero(String numero) {
 	this.numero = numero;
 }
 public int getTipoTelefone() {
