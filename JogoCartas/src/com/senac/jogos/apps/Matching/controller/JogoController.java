@@ -8,7 +8,7 @@ public class JogoController {
 	private static Scanner teclado = new Scanner(System.in);
 	private static MatchingCardGame jogo = new MatchingCardGame();
 	private Carta cartaJogador;
-	int nunj;
+	int nunj,v;
 	int valor;
 	int pular1, pular2, pular3, pular4;
 	String verificarvalores;
@@ -111,16 +111,24 @@ public class JogoController {
 
 	// defifir a quantidade de jogador
 	public void definirqJogador() {
+int validar=0;
 
-		System.out.println("Numero de jogadores? ");
-		nunj = teclado.nextInt();
+		while (validar==0) {
+			System.out.println("Numero de jogadores? ");
+			nunj = teclado.nextInt();
+		if(nunj==1||nunj==2||nunj==3||nunj==4){
+     
+		v =nunj;
+		jogo.setOnline(v);
 		jogo.setNunj(nunj);
-		while (nunj < 1 || nunj > 4) {
-			if (nunj < 1 || nunj > 4)
-				System.out.println("Numero invalido digite novamente");
+		validar++;
+		} else
+			System.out.println("opção invalida"); 
+			
+		}
 		}
 
-	}
+	
 
 	// buscar o numero de jogador
 	public int getNunJogador() {
@@ -143,9 +151,16 @@ public class JogoController {
 		return verificarvalores;
 
 	}
+	public String getGanhador()
+	{
+		return jogo.getGanhador();
+	}
 	
 	public void resetcarta()
 	{
 		cartaJogador = null;
 	}
+	
+
+	
 }

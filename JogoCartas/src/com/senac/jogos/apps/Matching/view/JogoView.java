@@ -17,11 +17,12 @@ public class JogoView {
 		// define a quantidade de jogador
 		controller.definirqJogador();
 		// grava a quantidade de jogador para inserir no for
+		
 		int cont = controller.getNunJogador();
 
 		int cont2 = 1;
 		// for incrementando 2 devido a mesa tirar uma carta tambem
-		for (int i = 1; i <= 52; i = i + 2) {
+		for (int i = 1; i < 50; i = i + 2) {
 
 			if (cont < cont2) {
 				cont2 = 1;
@@ -73,6 +74,8 @@ public class JogoView {
 			System.out.println("\n------------------------\n");
 			cont2++;
 		}
-
+		  
+		  System.out.println(" As cartas acabaram!! \n\n  ");
+             System.out.println(controller.getGanhador());
 	}
 }

@@ -3,9 +3,10 @@ package com.senac.jogos;
 public class Jogador {
 
 	private int pontos;
-
+	int online;
 	public Jogador() {
 		this.pontos = 0;
+		
 	}
 
 	public int getPontos() {
@@ -24,4 +25,12 @@ public class Jogador {
 		this.pontos = pontos;
 	}
 
+    public void setonline()
+    {
+    	this.online =1;
+    }
+    public int getonline()
+    {
+    	return online; 
+    }
 }
