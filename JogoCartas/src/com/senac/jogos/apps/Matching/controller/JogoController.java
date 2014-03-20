@@ -10,6 +10,7 @@ public class JogoController {
 	private Carta cartaJogador;
 	int nunj;
 	int valor;
+	int pular1, pular2, pular3, pular4;
 	String verificarvalores;
 
 	public JogoController() {
@@ -21,8 +22,70 @@ public class JogoController {
 		int pontos = jogo.matchCarta(cartaJogador);
 		jogo.getJogador().addPontos(pontos);
 		// descartar carta
-		jogo.setMesa(cartaJogador);
+		jogo.setMesa(jogo.drawCarta());
 		cartaJogador = null;
+	}
+
+	public  int verificarpulo(int valor) {
+		
+		if(valor==1)
+		{
+			return pular1;
+		}
+		if(valor==2)
+		{
+			return pular2;
+		}
+		if(valor==3)
+		{
+			return pular3;
+		}        
+		
+		else
+		{
+			return pular4;
+		}
+		
+	}
+	
+	public void pular(int val){
+		if(val==1)
+		{
+			 pular1++;
+		}
+		if(val==2)
+		{
+			pular2++;
+		}
+		if(val==3)
+		{
+			pular3++;
+		}        
+		if(val==4)
+		{
+			pular4++;
+		}
+		jogo.getJogador().addPontos(-1);
+		
+	}
+	public void zerarpulo(int val){
+		if(val==1)
+		{
+			 pular1=0;
+		}
+		else if(val==2)
+		{
+			pular2=0;
+		}
+		else if(val==3)
+		{
+			pular3=0;
+		}        
+		else 
+		{
+			pular4=0;
+		}
+		
 	}
 
 	public String showJogador() {
@@ -34,11 +97,13 @@ public class JogoController {
 	}
 
 	public String showMesa() {
+
+		
 		return showCarta(jogo.getMesa());
 	}
 
 	public String showCartaJogador() {
-		if (cartaJogador == null)
+		    cartaJogador = null;
 			cartaJogador = jogo.drawCarta();
 
 		return showCarta(cartaJogador);
@@ -73,9 +138,14 @@ public class JogoController {
 		return jogo.getposicao();
 	}
 
-	public String getvervalor() {
-		verificarvalores = jogo.posivalores();
+	public String getvervalor(int valor) {
+		verificarvalores = jogo.posivalores(valor);
 		return verificarvalores;
 
+	}
+	
+	public void resetcarta()
+	{
+		cartaJogador = null;
 	}
 }

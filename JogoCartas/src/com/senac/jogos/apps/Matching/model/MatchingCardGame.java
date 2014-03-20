@@ -14,6 +14,7 @@ public class MatchingCardGame {
 	private Carta mesa;
 	int qtdJogador;
 	private Jogador[] jogadores = new Jogador[4];
+	String teste;
 
 	public MatchingCardGame() {
 
@@ -73,13 +74,33 @@ public class MatchingCardGame {
 
 	}
 
-	public String posivalores() {
+	public String posivalores(int val) {
+if(val==1)
+{
+	teste = " " + jogadores[0].getPontos();
 
-		String teste = " " + jogadores[0].getPontos() + " "
-				+ jogadores[1].getPontos() + " " + jogadores[2].getPontos()
-				+ " " + jogadores[3].getPontos();
+}
+if(val==2)
+{
+	teste = " "+jogadores[1].getPontos();
+
+}
+		 
+if(val==3)
+{
+	 teste = " " + jogadores[2].getPontos();
+
+}		 
+if(val==4)
+{
+	 teste = " " + jogadores[3].getPontos();
+
+}
+
 		return teste;
 	}
+	
+	
 
 	public int getposicao() {
 
