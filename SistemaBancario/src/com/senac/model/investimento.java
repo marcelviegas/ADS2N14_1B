@@ -17,6 +17,14 @@ this.dataCriacao = data;
 		
 		setSaldo(valor);
 	}
+
+	public int getDataCriacao() {
+		return dataCriacao;
+	}
+
+	public void setDataCriacao(int dataCriacao) {
+		this.dataCriacao = dataCriacao;
+	}
 	
 	
 	

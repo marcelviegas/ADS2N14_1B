@@ -5,15 +5,24 @@ public class Conta {
 	private double saldo;
 	private int numConta;
 	private int numVerificacao;
+	private cliente cliente;
 	
 	
+	public cliente getCliente() {
+		return cliente;
+	}
+
+	public void setCliente(cliente cliente) {
+		this.cliente = cliente;
+	}
+
 	public Conta()
 
 	{
 		
 	}
 
-    public void Depositar(int valor)
+    public void Depositar(double valor)
     {
     	this.saldo=this.saldo+valor;
     }
@@ -36,8 +45,9 @@ public class Conta {
 
 
 
-	public void setNumConta(int numConta) {
-		this.numConta = numConta;
+	public void setNumConta(int valor) {
+		this.numConta = valor;
+		
 	}
 
 

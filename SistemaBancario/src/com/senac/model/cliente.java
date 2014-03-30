@@ -2,19 +2,32 @@ package com.senac.model;
 
 public class cliente {
 	String nome;
-    private int numconta = 1;
-    int tConta;
-    
-    public void Cliente(String nome,int numconta,int tConta)
-    {
-    this.nome=nome;
-    this.numconta=numconta;
-    this.tConta=tConta;
-    this.numconta++;
-    }
-    public int getnumconta()
-    {
-    	return this.numconta;
-    }
-    
+	
+	int tConta;
+
+	public cliente(String texto, int valor) {
+		this.nome = texto;
+
+		this.tConta = valor;
+
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public int gettConta() {
+		return tConta;
+	}
+
+	public void settConta(int tConta) {
+		this.tConta = tConta;
+	}
+
+
+
 }
