@@ -12,8 +12,8 @@ public class view {
 	public static void main(String[] args) {
 	    controller contr = new controller();
 		String nome;
-		int Tconta;
-		
+		int Tconta,nconta;
+		double rs;
 		int op=0;
 		System.out.println("BEM VINDO AO SISTEMA BANCARIO DAS GANBIARRAS");
 		while (op<1) {
@@ -35,16 +35,36 @@ public class view {
 
 		case 2:
 			System.out.println("Numero da conta: ");
-			int nconta=teclado.nextInt();
+			 nconta=teclado.nextInt();
 			System.out.println("valor: ");
-			double rs = teclado.nextDouble();
+			rs = teclado.nextDouble();
 			System.out.println();
 			contr.deposito(nconta, rs);
 			op=0;
 			break;
 		case 3:
+			System.out.println("Numero da conta: ");
+			nconta=teclado.nextInt();
+			System.out.println("valor: ");
+			rs = teclado.nextDouble();
+			contr.saque(nconta, rs);
+			op=0;
+			
+			break;
+		case 4:
+			System.out.println("Numero da conta: ");
+			nconta=teclado.nextInt();
+			System.out.println("valor da taxa: ");
+			rs = teclado.nextDouble();
+			contr.investimento(nconta, rs);
+			op=0;
+			break;
+		case 5:
+			System.out.println("Numero da conta: ");
+			nconta=teclado.nextInt();
 			
 			
+			op=0;
 			break;
 		default:
 			

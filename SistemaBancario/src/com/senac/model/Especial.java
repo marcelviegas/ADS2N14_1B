@@ -17,12 +17,12 @@ public void Saque(double valor)
 		System.out.println("saldo insufiente para realizar saque");
 		
 			}
-	else
+	else System.out.println("Saque efetuado com sucesso!!");
 	{
 		
 		double valor2 = getSaldo()-valor;
 		setSaldo(valor2);
-		System.out.println("Saque efetuado com sucesso");
+		
 	}
 	
 }

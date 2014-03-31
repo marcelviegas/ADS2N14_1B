@@ -24,7 +24,7 @@ public class controller {
 			conta1[nc1].setCliente(cliente);
 			conta1[nc1].setNumConta(nc);
 			System.out.println("Cliente " + conta1[nc1].getCliente().getNome()
-					+ "o numero da sua conta é:" + conta1[nc1].getNumConta()
+					+ " o numero da sua conta é:" + conta1[nc1].getNumConta()
 					+ " Conta comum aberta com sucesso! ");
 			conta1[nc1].setSaldo(0);
 			nc++;
@@ -34,8 +34,11 @@ public class controller {
 			conta2[nc2] = new Especial();
 			conta2[nc2].setCliente(cliente);
 			conta2[nc2].setNumConta(nc);
+			System.out.println("informar valor do limite: ");
+			double limite = teclado.nextDouble();
+			conta2[nc2].setLimete(limite);
 			System.out.println("Cliente " + conta2[nc2].getCliente().getNome()
-					+ "o numero da sua conta é:" + conta2[nc2].getNumConta()
+					+ " o numero da sua conta é:" + conta2[nc2].getNumConta()
 					+ " Conta Especial aberta com sucesso! ");
 
 			conta2[nc2].setSaldo(0);
@@ -48,7 +51,7 @@ public class controller {
 			conta3[nc3].setNumConta(nc);
 			conta3[nc3].setSaldo(0);
 			System.out.println("Cliente " + conta3[nc3].getCliente().getNome()
-					+ "o numero da sua conta é:" + conta3[nc3].getNumConta()
+					+ " o numero da sua conta é:" + conta3[nc3].getNumConta()
 					+ " Conta investimentos aberta com sucesso! ");
 			nc++;
 			nc3++;
@@ -60,6 +63,73 @@ public class controller {
 			break;
 		}
 
+	}
+
+	public void saque(int n, double vsaque) {
+
+		for (int i = 0; i < nc1; i++) {
+			if (conta1[i].getNumConta() == n) {
+				System.out.println("Você deseja sacar :R$ " + vsaque
+						+ " Na conta de: " + conta1[i].getCliente().getNome()
+						+ "\n1 - sim\n2 - não");
+				conf = teclado.nextInt();
+				if (conf == 1) {
+					conta1[i].Saque(vsaque);
+					tlogico = true;
+				} else
+					System.out.println("da proxima faça com mais atencao");
+			}
+		}
+		for (int i = 0; i < nc2; i++) {
+			if (conta2[i].getNumConta() == n) {
+				System.out.println("Você deseja sacar:R$ " + vsaque
+						+ " Na conta de: " + conta2[i].getCliente().getNome()
+						+ "\n1 - sim\n2 - não");
+				conf = teclado.nextInt();
+				if (conf == 1) {
+					conta2[i].Saque(vsaque);
+					tlogico = true;
+				} else
+					System.out.println("da proxima faça com mais atencao");
+			}
+		}
+
+		for (int i = 0; i < nc3; i++) {
+			if (conta3[i].getNumConta() == n) {
+				System.out.println("Você deseja sacar:R$ " + vsaque
+						+ " da conta de: " + conta3[i].getCliente().getNome()
+						+ "\n1 - sim\n2 - não");
+				conf = teclado.nextInt();
+				if (conf == 1) {
+					conta3[i].Saque(vsaque);
+					tlogico = true;
+				} else
+					System.out.println("da proxima faça com mais atencao");
+			}
+		}
+
+		
+
+	}
+
+	public void versaldo() {
+		 System.out.println(conta3[0].getSaldo());
+		 
+	}
+	public void investimento(int n,double taxa)
+	{
+		for(int i=0;i<nc3;i++)
+		{
+			if(conta3[i].getNumConta()==n)
+			{
+				conta3[i].dividendos(taxa);
+			} else System.out.println("Sua conta não é do tipo de investimento");
+			
+			
+		}
+		
+		
+		
 	}
 
 	public void deposito(int n, double vdeposito) {
@@ -104,19 +174,45 @@ public class controller {
 					System.out.println("da proxima faça com mais atencao");
 			}
 		}
-		
-		if(tlogico==true)
-		{
+
+		if (tlogico == true) {
 			System.out.println("Deposito realizado com sucesso!");
-		} else System.out.println("conta invalida!");
+		} else
+			System.out.println("conta invalida!");
 
 	}
-
-	public void versaldo()
+	
+	public void csaldo(int n)
 	{
-		//System.out.println(conta1[0].getSaldo());
-		//System.out.println(conta1[1].getSaldo());
+		tlogico=false;
+		for (int i = 0; i < nc1; i++) {
+			if (conta1[i].getNumConta() == n) {
+				System.out.println("seu saldo é: "+conta1[i].getSaldo());
+			tlogico=true;
+			}
+		}
+		for (int i = 0; i < nc2; i++) {
+			if (conta2[i].getNumConta() == n) {
+				System.out.println("seu saldo é: "+conta2[i].getSaldo());
+			tlogico = true;	
+			} 
+			}
+		
+
+		for (int i = 0; i < nc3; i++) {
+			if (conta3[i].getNumConta() == n) {
+				System.out.println("seu saldo é: "+conta3[i].getSaldo());
+				tlogico = true;
+			}
+		}
+
+		if(tlogico==false)
+		{
+			System.out.println("conta não encontrada");
+		}
+
 	}
+	   
 	
 	
 }

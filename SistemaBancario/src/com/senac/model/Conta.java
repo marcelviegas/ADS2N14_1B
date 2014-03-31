@@ -70,10 +70,10 @@ public class Conta {
 			System.out.println("saldo insufiente para realizar saque");
 			
 				}
-		else
+		else System.out.println("Saque efetuado com sucesso!!");
 		{
 			this.saldo=this.saldo-valor;
-			System.out.println("Saque efetuado com sucesso");
+			
 		}
 		
 	}
