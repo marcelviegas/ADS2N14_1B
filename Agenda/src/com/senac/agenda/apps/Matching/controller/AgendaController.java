@@ -1,26 +1,38 @@
 package com.senac.agenda.apps.Matching.controller;
+import java.io.*;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
+
 
 import com.senac.agenda.*;
 import com.senac.apps.Matching.model.Pessoa;
 
 public class AgendaController {
-	private Telefone[] fone = new Telefone[50];
-	private Pessoa PessoaVector[] = new Pessoa[50];
+	private Pessoa[] pessoas = new Pessoa[50];
+	private Telefone tel;
 	private String[] nome1 = new String[10];
-	private String[] nome2 = new String[5];
+	private String[] nome2 = new String[10];
 	private String[] end1 = new String[10];
-	private String[] end2 = new String[5];
+	private String[] end2 = new String[10];
 	private String[] tel1 = new String[10];
-	private String[] tel2 = new String[5];
-	private int cont = 0;
-	int pref = 0;
-	int vardd;
-	String numero;
+	private String[] tel2 = new String[10];
+	private String[] ddd = new String[3];
+	int DDD;
+	String num;
+	int sort;
+	int sort2;
+	int sort3;
+	int sort4;
 
 	public AgendaController() {
 
 	}
-    //metodo para criar os objetos e sortear eles
+
+	// metodo para criar os objetos e sortear eles
 	public void SetObjetos() {
 		nome1[0] = "joel";
 		nome1[1] = "manoel";
@@ -38,6 +50,11 @@ public class AgendaController {
 		nome2[2] = "Reis";
 		nome2[3] = "Silveira";
 		nome2[4] = "Azevedo";
+		nome2[5] = "Pinheiro";
+		nome2[6] = "freitas";
+		nome2[7] = "Viegas";
+		nome2[8] = "Oliveira";
+		nome2[9] = "coutinho";
 
 		end1[0] = "Abri";
 		end1[1] = "Vinte e um";
@@ -55,6 +72,11 @@ public class AgendaController {
 		end2[2] = "euripedes";
 		end2[3] = "aurelio";
 		end2[4] = "Flores";
+		end2[5] = "papagaio";
+		end2[6] = "Quero quero";
+		end2[7] = "eunive";
+		end2[8] = "medeiros";
+		end2[9] = "cunha";
 
 		tel1[0] = "11";
 		tel1[1] = "22";
@@ -73,57 +95,73 @@ public class AgendaController {
 		tel2[3] = "78";
 		tel2[4] = "91";
 
-		for (int i = 0; i < 5; i++) {
-			for (int j = 0; j < 10; j++) {
-				pref++;
+		ddd[0] = "051-470";
+		ddd[1] = "055-300";
+		ddd[2] = "040-400";
 
-				if (pref == 4) {
-					pref = 1;
-				}
-				if (pref == 1) {
-					numero = "4068-" + tel1[j] + tel2[i];
-					vardd = 51;
-				}
+	}
+     //inseri os objetos no vetor pessoas ja sorteado
+	public void inseriagenda() {
+		for (int i = 0; i <50; i++) {
+            pessoas[i] = new Pessoa();
+			sort = (int) (Math.random() * 10);
+			sort2 = (int) (Math.random() * 10);
+			sort3 = (int) (Math.random() * 10);
+			sort4 = (int) (Math.random() * 5);
+			DDD = (int) (Math.random() * 3);
+			tel = new Telefone(ddd[DDD] + "-", tel1[sort3] + tel2[sort4], DDD);
+			pessoas[i].setNome(nome1[sort]+" "+nome2[sort2]);
+			pessoas[i].setEndereco(end1[sort] + " " + end2[sort2]);
+			pessoas[i].setFone(tel);
 
-				if (pref == 2) {
-					numero = "5099-" + tel1[j] + tel2[i];
-					vardd = 54;
-				}
-				if (pref == 3) {
-					numero = "7011-" + tel1[j] + tel2[i];
-					vardd = 59;
-				}
-				int tipo = 1;
-				fone[cont] = new Telefone(vardd, numero, tipo);
+			// System.out.println("Nome: " + nome1[sort] + " " + nome2[sort2]);
+			// sort = (int) (Math.random() * 10);
+			// sort2 = (int) (Math.random() * 10);
+			// System.out.println("End: " + end1[sort] + " " + end2[sort2]);
 
-				PessoaVector[cont] = new Pessoa(nome1[j] + " " + nome2[i],
-						end1[j]+" "+end2[i], fone[cont]);
-
-				cont++;
-
+		}
+	}
+	public void gravardadospessoa() throws IOException
+	{
+		Path path = Paths.get("C:/Users/Marcel/ADS2N14_1B/dadosAgenda");
+		Charset utf8 = StandardCharsets.UTF_8;
+		try(BufferedWriter writer = Files.newBufferedWriter(path, utf8)){
+			
+			for(int i=0;i<50;i++){
+			
+			writer.write("\n"+pessoas[i].getNome()+"|"+pessoas[i].getFone()+"|"+pessoas[i].getEndereco()+"\n teset");
 			}
-
+			//(p.getNome()+"|"+p.getFone()+"|"+p.getEndereco()+"\n");	
+		}
+		
+	}
+	
+	
+	//imprime as 50 possições do vetor
+	public void imprimeAgenda() throws IOException
+	{
+		
+		for(int i = 0; i < 50; i++){
+			
+			System.out.println("Nome: "+pessoas[i].getNome()+" \nEnd: "+pessoas[i].getEndereco());
+		if(pessoas[i].getFone().getTipoTelefone()==0)
+		{
+			System.out.println("Telefone residencial: "+pessoas[i].getFone().getDdd()+pessoas[i].getFone().getNumero());
+			
+		}
+		if(pessoas[i].getFone().getTipoTelefone()==1)
+		{
+			System.out.println("Telefone residencial: "+pessoas[i].getFone().getDdd()+pessoas[i].getFone().getNumero());
+			
+		}
+		if(pessoas[i].getFone().getTipoTelefone()==2)
+		{
+			System.out.println("Telefone residencial: "+pessoas[i].getFone().getDdd()+pessoas[i].getFone().getNumero());
+			
+		}
+		//if((pessoas[i].getFone().getTipoTelefone()==3))
+		System.out.println("\n--------------------------------------\n");
 		}
 	}
-    //metodo para imprir
-	public void ImprimeVetor() {
-		for (int t = 0; t < 50; t++) {
 
-			System.out.println("Nome: " + PessoaVector[t].getNome()
-					+ " \nEndereço: " + PessoaVector[t].getEndereco());
-			if (PessoaVector[t].getFone().getTipoTelefone() == 1)
-				System.out.print("tipo de telefone residencial "
-						+ PessoaVector[t].getFone().getDdd() + "-"
-						+ PessoaVector[t].getFone().getNumero() + "\n\n");
-			if (PessoaVector[t].getFone().getTipoTelefone() == 2)
-				System.out.print("tipo de telefone celular "
-						+ PessoaVector[t].getFone().getDdd() + "-"
-						+ PessoaVector[t].getFone().getNumero() + "\n\n");
-			if (PessoaVector[t].getFone().getTipoTelefone() == 3)
-				System.out.print("tipo de telefone comercial"
-						+ PessoaVector[t].getFone().getDdd() + "-"
-						+ PessoaVector[t].getFone().getNumero() + "\n\n");
-		}
-
-	}
 }

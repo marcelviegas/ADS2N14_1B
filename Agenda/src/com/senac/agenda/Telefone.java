@@ -2,12 +2,12 @@ package com.senac.agenda;
 
 public class Telefone {
 	
- private int ddd;
+ private String ddd;
  private String numero;
  private int tipoTelefone;
  
  
-public Telefone(int ddd, String numero, int tipoTelefone) {
+public Telefone(String ddd, String numero, int tipoTelefone) {
 
 	this.ddd = ddd;
 	this.numero = numero;
@@ -15,10 +15,10 @@ public Telefone(int ddd, String numero, int tipoTelefone) {
 }
 
 
-public int getDdd() {
+public String getDdd() {
 	return ddd;
 }
-public void setDdd(int ddd) {
+public void setDdd(String ddd) {
 	this.ddd = ddd;
 }
 public String getNumero() {

@@ -9,13 +9,17 @@ public class Pessoa {
 	private Telefone fone;
 	
 
-	public Pessoa(String nome, String endereco, Telefone fone) {
+	public Pessoa(String nome, String endereco) {
 		
 		this.nome = nome;
 		this.endereco = endereco;
-		this.fone = fone;
+		
 	}
-
+public Pessoa() {
+		
+		
+		
+	}
 
 	public String getNome() {
 		return nome;
