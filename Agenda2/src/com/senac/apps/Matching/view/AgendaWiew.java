@@ -17,7 +17,8 @@ public class AgendaWiew {
         //imprimir o vetor
 		controller.inseriagenda();
 		controller.imprimeAgenda();
-		controller.gravardadospessoa();
+		controller.salvarcontatos();
+		
 
 	}
 

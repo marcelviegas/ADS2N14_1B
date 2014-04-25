@@ -12,6 +12,7 @@ import com.senac.agenda.*;
 import com.senac.apps.Matching.model.Pessoa;
 
 public class AgendaController {
+	manipularArquivos arq = new manipularArquivos();
 	private Pessoa[] pessoas = new Pessoa[50];
 	private Telefone tel;
 	private String[] nome1 = new String[10];
@@ -121,24 +122,12 @@ public class AgendaController {
 
 		}
 	}
-	public void gravardadospessoa() throws IOException
-	{
-		Path path = Paths.get("C:/Users/Marcel/ADS2N14_1B/dadosAgenda");
-		Charset utf8 = StandardCharsets.UTF_8;
-		try(BufferedWriter writer = Files.newBufferedWriter(path, utf8)){
-			
-			for(int i=0;i<50;i++){
-			
-			writer.write("\n"+pessoas[i].getNome()+"|"+pessoas[i].getFone()+"|"+pessoas[i].getEndereco()+"\n teset");
-			}
-			//(p.getNome()+"|"+p.getFone()+"|"+p.getEndereco()+"\n");	
-		}
+	
 		
-	}
 	
 	
 	//imprime as 50 possições do vetor
-	public void imprimeAgenda() throws IOException
+	public void imprimeAgenda() 
 	{
 		
 		for(int i = 0; i < 50; i++){
@@ -162,6 +151,21 @@ public class AgendaController {
 		//if((pessoas[i].getFone().getTipoTelefone()==3))
 		System.out.println("\n--------------------------------------\n");
 		}
+	}
+	
+	
+	public void salvarcontatos()
+	{
+		for(int i =0; i<=20;i++)
+		{
+			
+		String contato = pessoas[i].getNome()+"|"+pessoas[i].getEndereco()+"|"+pessoas[i].getFone().getDdd()+pessoas[i].getFone().getNumero();
+			
+			arq.escreverArquivo(contato);
+			
+		}
+		
+		
 	}
 
 }
