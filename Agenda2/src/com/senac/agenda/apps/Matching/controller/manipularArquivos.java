@@ -8,7 +8,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class manipularArquivos {
-	File arquivo = new File("contatos.txt");
+	File arquivo = new File("C:/Users/Marcel/ADS2N14_1B/contatos.txt");
 
 	/**
 	 * @param args

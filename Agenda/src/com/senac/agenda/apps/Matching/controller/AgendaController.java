@@ -159,7 +159,7 @@ public class AgendaController {
 		for(int i =0; i<=20;i++)
 		{
 			
-		String contato = pessoas[i].getNome()+";"+pessoas[i].getEndereco()+";"+pessoas[i].getFone().getDdd()+pessoas[i].getFone().getNumero();
+		String contato = pessoas[i].getNome()+"|"+pessoas[i].getEndereco()+"|"+pessoas[i].getFone().getDdd()+pessoas[i].getFone().getNumero();
 			
 			arq.escreverArquivo(contato);
 			

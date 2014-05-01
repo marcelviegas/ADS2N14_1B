@@ -3,6 +3,7 @@ package com.senac.view;
 import com.senac.controller.*;
 
 import java.util.InputMismatchException;
+import java.util.ResourceBundle.Control;
 import java.util.Scanner;
 
 public class view {
@@ -20,6 +21,12 @@ public class view {
 		int op = 0;
 		boolean controlar = true;
 		System.out.println("       BEM VINDO AO SISTEMA BANCARIO\n");
+		//if(!contr.verficiarArquivo())
+		//{
+			
+		//}
+		
+		contr.carregarContatos();
 		do {
 			
 		
@@ -61,16 +68,12 @@ public class view {
 				break;
 			case 4:
 				System.out.println("Numero da conta: ");
-				nconta = teclado.nextInt();
-				System.out.println("valor da taxa: ");
-				rs = teclado.nextDouble();
-				contr.investimento(nconta, rs);
 				op = 0;
 				break;
 			case 5:
 				System.out.println("Numero da conta: ");
 				nconta = teclado.nextInt();
-
+				contr.csaldo(nconta);
 				op = 0;
 				break;
 			case 6:
