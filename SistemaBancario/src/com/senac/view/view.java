@@ -21,12 +21,12 @@ public class view {
 		int op = 0;
 		boolean controlar = true;
 		System.out.println("       BEM VINDO AO SISTEMA BANCARIO\n");
-		//if(!contr.verficiarArquivo())
-		//{
-			
-		//}
+		if(!contr.verficiarArquivo2())
+		{
+			contr.carregarContatos();
+		}
 		
-		contr.carregarContatos();
+		
 		do {
 			
 		

@@ -63,7 +63,14 @@ public class arquivosConta {
 			}
 		return true;
 	}
-	
+	public boolean VerficarExistencia2()
+	{
+		if (!arquivo2.exists()) {
+			//cria um arquivo (vazio)
+		return false;
+			}
+		return true;
+	}
 	public void escreverArquivo(String texto){
 		 
 		try {

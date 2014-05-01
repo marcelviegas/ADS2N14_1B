@@ -43,6 +43,12 @@ public class controller {
 		} else
 			return false;
 	}
+	public boolean verficiarArquivo2() {
+		if (arq.VerficarExistencia() == true) {
+			return true;
+		} else
+			return false;
+	}
 
 	// public void carregarConta()
 	// {
