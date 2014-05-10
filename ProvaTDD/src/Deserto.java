@@ -50,8 +50,15 @@ public class Deserto {
 		
 	}
 
-	public void carregar() {
-		
+	public void carregar() throws combustivelCheioException {
+		if(getCombustivel()==6)
+		{
+			throw new combustivelCheioException();
+		}
+		else
+		{
+			combustivel++;
+		}
 		
 	}
 	

@@ -41,7 +41,7 @@ public class primeiroTeste {
 	}
 
     @Test 
-    public void carregar() throws SemCombustivelException
+    public void Testcarregar() throws SemCombustivelException, combustivelCheioException
     {
     	des.iniciarPartida();
 		des.avancar();
