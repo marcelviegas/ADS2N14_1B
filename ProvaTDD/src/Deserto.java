@@ -21,6 +21,11 @@ public class Deserto {
 		// TODO Auto-generated method stub
 		return combustivel;
 	}
+
+	public void avancar() throws SemCombustivelException {
+		
+		
+	}
 	
 
 }
