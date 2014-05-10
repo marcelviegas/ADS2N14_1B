@@ -9,7 +9,7 @@ public class primeiroTeste {
 	Deserto des = new Deserto();
 	@Test
 		public void testInit() {
-
+            des.iniciarPartida();
 			assertEquals(des.getPosicao(), 0);
             assertEquals(des.getCombustivel(),6);
 		}

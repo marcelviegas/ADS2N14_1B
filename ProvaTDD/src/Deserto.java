@@ -7,6 +7,11 @@ public class Deserto {
 		
 	}
 
+	public void iniciarPartida()
+	{
+		this.combustivel=6;
+		this.posicao=0;
+	}
 	public int getPosicao() {
 		// TODO Auto-generated method stub
 		return posicao;
