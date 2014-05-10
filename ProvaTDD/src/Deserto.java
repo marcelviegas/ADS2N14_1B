@@ -36,8 +36,17 @@ public class Deserto {
 		
 	}
 
-	public void voltar() {
-		// TODO Auto-generated method stub
+	public void voltar() throws SemCombustivelException {
+		if(getCombustivel()>0&&getPosicao()>0)
+		{
+			combustivel--;
+			posicao--;
+			
+		}
+		else
+		{
+			throw new SemCombustivelException();
+		}
 		
 	}
 	

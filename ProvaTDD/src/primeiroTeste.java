@@ -35,8 +35,8 @@ public class primeiroTeste {
 
 		des.voltar();
 
-		assertEquals(pos - 1, des.getPosicao());
-		assertEquals(comb - 1, des.getCombustivel());
+		assertEquals(pos -1, des.getPosicao());
+		assertEquals(comb -1, des.getCombustivel());
 
 	}
 
