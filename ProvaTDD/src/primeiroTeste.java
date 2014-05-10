@@ -50,6 +50,23 @@ public class primeiroTeste {
 		assertEquals(comb+1, des.getCombustivel());
 		
     }
-
+@Test
+    public void Testdescarregar() throws SemCombustivelException
+    {
+    	des.iniciarPartida();
+		des.avancar();
+		int comb = des.getCombustivel();
+		int pos  = des.getPosicao();
+		
+		des.descarregar();
+		assertEquals(1,des.getUnidade(pos));
+		assertEquals(comb-1, des.getCombustivel());
+		
+		
+		
+    }
+    
+    
+    
 
 }

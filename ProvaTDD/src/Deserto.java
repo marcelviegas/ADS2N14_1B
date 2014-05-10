@@ -2,11 +2,15 @@
 public class Deserto {
 	int posicao;
 	int combustivel;
+	int unidade[] = new int[10];
 	public Deserto()
 	{
 		
 	}
-
+    public int getUnidade(int posicao)
+    {
+    	return unidade[posicao];
+    }
 	public void iniciarPartida()
 	{
 		this.combustivel=6;
@@ -60,7 +64,12 @@ public class Deserto {
 			combustivel++;
 		}
 		
-	}
 	
+	}
+	public void descarregar()
+	{
+		
+		
+	}
 
 }
