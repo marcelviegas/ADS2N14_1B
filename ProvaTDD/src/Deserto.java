@@ -23,7 +23,16 @@ public class Deserto {
 	}
 
 	public void avancar() throws SemCombustivelException {
-		
+		if(getCombustivel()>0)
+		{
+			combustivel--;
+			posicao++;
+			
+		}
+		else
+		{
+			throw new SemCombustivelException();
+		}
 		
 	}
 	
