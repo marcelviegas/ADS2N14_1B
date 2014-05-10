@@ -68,7 +68,11 @@ public class Deserto {
 	}
 	public void descarregar()
 	{
-		
+		if(combustivel>0)
+		{
+		combustivel--;
+		unidade[getPosicao()]=unidade[getPosicao()]+1;
+		}
 		
 	}
 
