@@ -49,6 +49,11 @@ public class Deserto {
 		}
 		
 	}
+
+	public void carregar() {
+		
+		
+	}
 	
 
 }

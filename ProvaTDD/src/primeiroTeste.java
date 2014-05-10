@@ -40,4 +40,16 @@ public class primeiroTeste {
 
 	}
 
+    @Test 
+    public void carregar() throws SemCombustivelException
+    {
+    	des.iniciarPartida();
+		des.avancar();
+		int comb = des.getCombustivel();
+		des.carregar();
+		assertEquals(comb+1, des.getCombustivel());
+		
+    }
+
+
 }
