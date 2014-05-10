@@ -35,6 +35,11 @@ public class Deserto {
 		}
 		
 	}
+
+	public void voltar() {
+		// TODO Auto-generated method stub
+		
+	}
 	
 
 }
