@@ -1,12 +1,30 @@
 public class Deserto {
-	int posicao;
-	int combustivel;
-	int unidade[] = new int[10];
+	private int posicao;
+	private int combustivel;
+	private int unidade[] = new int[10];
 
 	public Deserto() {
 
 	}
-
+    public void placar()
+    {
+    	
+    	System.out.println("\nO CAMINHAO ESTA NA POSICAO: "+(getPosicao()+1)+"\nCombustivel: "+getCombustivel());
+    	
+    	for(int i=0;i<10;i++)
+    	{   
+    		if(i==0)
+    		{
+    			System.out.println("posicao 1 tem combustivel infinito");
+    		}
+    		else
+    		System.out.println("posicao "+(i+1)+" tem "+unidade[i]+" combustivel");
+    		
+    	}
+    	
+    	
+    	
+    }
 	public int getUnidade(int posicao) {
 		return unidade[posicao];
 	}
