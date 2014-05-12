@@ -1,21 +1,21 @@
-
 public class Deserto {
 	int posicao;
 	int combustivel;
 	int unidade[] = new int[10];
-	public Deserto()
-	{
-		
+
+	public Deserto() {
+
 	}
-    public int getUnidade(int posicao)
-    {
-    	return unidade[posicao];
-    }
-	public void iniciarPartida()
-	{
-		this.combustivel=6;
-		this.posicao=0;
+
+	public int getUnidade(int posicao) {
+		return unidade[posicao];
 	}
+
+	public void iniciarPartida() {
+		this.combustivel = 6;
+		this.posicao = 0;
+	}
+
 	public int getPosicao() {
 		// TODO Auto-generated method stub
 		return posicao;
@@ -27,53 +27,43 @@ public class Deserto {
 	}
 
 	public void avancar() throws SemCombustivelException {
-		if(getCombustivel()>0)
-		{
+		if (getCombustivel() > 0) {
 			combustivel--;
 			posicao++;
-			
-		}
-		else
-		{
+
+		} else {
 			throw new SemCombustivelException();
 		}
-		
+
 	}
 
 	public void voltar() throws SemCombustivelException {
-		if(getCombustivel()>0&&getPosicao()>0)
-		{
+		if (getCombustivel() > 0 && getPosicao() > 0) {
 			combustivel--;
 			posicao--;
-			
-		}
-		else
-		{
+
+		} else {
 			throw new SemCombustivelException();
 		}
-		
+
 	}
 
 	public void carregar() throws combustivelCheioException {
-		if(getCombustivel()==6)
-		{
+		if (getCombustivel() == 6) {
 			throw new combustivelCheioException();
-		}
-		else
-		{
+		} else if(unidade[getPosicao()]>0||getPosicao()==0){
 			combustivel++;
+			unidade[getPosicao()] = unidade[getPosicao()] - 1;
 		}
-		
-	
+
 	}
-	public void descarregar()
-	{
-		if(combustivel>0)
-		{
-		combustivel--;
-		unidade[getPosicao()]=unidade[getPosicao()]+1;
+
+	public void descarregar() {
+		if (combustivel > 0) {
+			combustivel--;
+			unidade[getPosicao()] = unidade[getPosicao()] + 1;
 		}
-		
+
 	}
 
 }
