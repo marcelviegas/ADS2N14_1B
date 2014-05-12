@@ -63,7 +63,29 @@ public class Deserto {
 			combustivel--;
 			unidade[getPosicao()] = unidade[getPosicao()] + 1;
 		}
-
+		
 	}
-
+	public void caminhoDeserto()
+	{
+		String []caminho = new String[10];
+		for(int i=0;i<10;i++)
+		{
+			if(getPosicao()==i)
+			{
+				caminho[i]="|CAMINHAO NA POSICAO "+(i+1);
+			} else 
+			{
+				caminho[i]="|------------";
+			}
+		}  
+		
+		for(int i=0;i<10;i++)
+		{
+			System.out.print(caminho[i]);
+			if(getPosicao()==10)
+			{
+				System.out.println("\nParabens vc conseguiu atravessar o deserto");
+			}
+		}
+	}
 }

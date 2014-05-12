@@ -61,5 +61,8 @@ public class primeiroTeste {
 		des.descarregar();
 		assertEquals(1,des.getUnidade(pos));
 		assertEquals(comb-1, des.getCombustivel());			
-    }            
+    } 
+
+
+
 }
