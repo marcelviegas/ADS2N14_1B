@@ -45,6 +45,7 @@ public class primeiroTeste {
     {
     	des.iniciarPartida();
 		des.avancar();
+		des.voltar();
 		int comb = des.getCombustivel();
 		des.carregar();
 		assertEquals(comb+1, des.getCombustivel());
