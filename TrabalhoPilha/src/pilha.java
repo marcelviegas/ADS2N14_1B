@@ -1,4 +1,4 @@
-import java.lang.reflect.Array;
+
 
 public class pilha {
 	private Object[] vetor;
@@ -29,20 +29,22 @@ public class pilha {
 			return vetor[QuantidadeItens];
 	}
 
-	public void pull() throws pilhaVaziaexception {
+	public void pull()// throws pilhaVaziaexception 
+	{
 		if (isempty()) {
-			throw new pilhaVaziaexception();
+			//throw new pilhaVaziaexception();
 		}
 
 		else
 			this.QuantidadeItens--;
 	}
 
-	public void push(Object valor) throws pilhaCheiaException {
+	public void push(Object valor) //throws pilhaCheiaException 
+	{
 
 		if(QuantidadeItens == vetor.length-1)
 		{
-			throw new pilhaCheiaException();
+			//throw new pilhaCheiaException();
 		}
 		
 		else
