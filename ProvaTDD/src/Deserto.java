@@ -100,9 +100,10 @@ public class Deserto {
 		for(int i=0;i<10;i++)
 		{
 			System.out.print(caminho[i]);
-			if(getPosicao()==10)
+			if(getPosicao()==9)
 			{
 				System.out.println("\nParabens vc conseguiu atravessar o deserto");
+			 
 			}
 		}
 	}
